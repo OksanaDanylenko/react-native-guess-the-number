@@ -58,6 +58,6 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-      height: 500,
+      height: '100%',
   },
 });
