@@ -2,7 +2,7 @@ import React from 'react';
 import { TextInput, StyleSheet } from 'react-native';
 
 const Input = props => {
-  return <TextInput {...props} style={{...styles.input, ...props.style}}/>
+  return <TextInput {...props} style={{ ...styles.input, ...props.style }} />;
 };
 
 const styles = StyleSheet.create({
@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
     height: 30,
     borderBottomColor: '#ccc',
     borderBottomWidth: 1,
-    marginVertical: 10
-  }
+    marginVertical: 10,
+  },
 });
 
 export default Input;

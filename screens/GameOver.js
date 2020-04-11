@@ -1,35 +1,46 @@
-import React, {useState, useRef, useEffect} from 'react';
-import {StyleSheet, Text, View, Button, Image } from 'react-native';
-import BodyText from "../components/BodyText";
-import TitleText from "../components/TitleText";
+import React from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Image,
+  Dimensions,
+} from 'react-native';
+import BodyText from '../components/BodyText';
+import TitleText from '../components/TitleText';
 import Success from '../assets/images/jude-beck-mU08JKimqbM-unsplash.jpg';
-import Colors from "../constants/Colors";
-import MainButton from "../components/MainButton";
+import Colors from '../constants/Colors';
+import MainButton from '../components/MainButton';
 
-const GameOver = props  => {
-  return <View style={styles.screen}>
-    <TitleText> The Game is over</TitleText>
-    <View style={styles.imageContainer}>
-      <Image source={Success} style={styles.image} resizeMode="contain" />
-    </View>
-    <View style={styles.resultContainer}>
-      <BodyText style={styles.resultText}>
-        You phone need
-        <Text style={styles.highlight}> {props.roundsNumber} </Text>
-        rounds to guess the number
-        <Text style={styles.highlight}> {props.userNumber}.</Text>
-      </BodyText>
-    </View>
-    <MainButton onPress={props.onRestart}> New Game</MainButton>
-  </View>
-}
-
+const GameOver = props => {
+  return (
+    <ScrollView>
+      <View style={styles.screen}>
+        <TitleText> The Game is over</TitleText>
+        <View style={styles.imageContainer}>
+          <Image source={Success} style={styles.image} resizeMode="contain" />
+        </View>
+        <View style={styles.resultContainer}>
+          <BodyText style={styles.resultText}>
+            You phone need
+            <Text style={styles.highlight}> {props.roundsNumber} </Text>
+            rounds to guess the number
+            <Text style={styles.highlight}> {props.userNumber}.</Text>
+          </BodyText>
+        </View>
+        <MainButton onPress={props.onRestart}> New Game</MainButton>
+      </View>
+    </ScrollView>
+  );
+};
 
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
     justifyContent: 'center',
-     alignItems: 'center',
+    alignItems: 'center',
+    paddingVertical: 10,
   },
   image: {
     width: '100%',
@@ -55,8 +66,8 @@ const styles = StyleSheet.create({
   },
   resultText: {
     textAlign: 'center',
-    fontSize: 20,
-  }
+    // fontSize: Dimensions.get('window').height < 400 ? 16 : 20,
+  },
 });
 
 export default GameOver;

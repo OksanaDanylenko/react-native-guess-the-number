@@ -1,14 +1,14 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
-import Colors from "../constants/Colors";
+import Colors from '../constants/Colors';
 
-const NumberContainer = props  => {
-  return <View style={styles.container}>
-    <Text style={styles.number}>{props.children}</Text>
-  </View>
+const NumberContainer = props => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.number}>{props.children}</Text>
+    </View>
+  );
 };
-
-
 
 const styles = StyleSheet.create({
   container: {
@@ -23,8 +23,7 @@ const styles = StyleSheet.create({
   number: {
     color: Colors.accent,
     fontSize: 22,
-  }
+  },
 });
-
 
 export default NumberContainer;
